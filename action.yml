@@ -1,4 +1,4 @@
-name: Official SonarQube Scan
+name: Extended SonarQube Scan
 description: >
   Scan your code with SonarQube to detect Bugs, Vulnerabilities and Code Smells in up to 27 programming languages!
 branding:
@@ -17,3 +17,7 @@ inputs:
     description: Set the sonar.projectBaseDir analysis property
     required: false
     default: .
+  enable-powershell:
+    description: Whether to enable PowerShell Scanning
+    required: false
+    default: false

@@ -30,6 +30,11 @@ if [[ -f "${INPUT_PROJECTBASEDIR%/}build.gradle" ]]; then
   exit 1
 fi
 
+if [[ -f "${INPUT_ENABLE-POWERSHELL%/}" ]]; then
+ echo "PowerShell Scanning enabled"
+ INPUT_ARGS="${INPUT_ARGS} -Dsonar.ps.plugin.skip=false"
+fi
+
 unset JAVA_HOME
 
 sonar-scanner -Dsonar.projectBaseDir=${INPUT_PROJECTBASEDIR} ${INPUT_ARGS}
