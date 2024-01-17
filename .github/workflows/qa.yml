@@ -10,7 +10,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup File Permissions
-        run: chown -R 1000:1000 sonarqube-scan-action
+        run: chown -R 1000:1000 ./
       - run: ./test/run-qa.sh
         timeout-minutes: 5
     services:
