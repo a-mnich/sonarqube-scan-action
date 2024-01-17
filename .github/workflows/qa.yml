@@ -9,6 +9,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup File Permissions
+        run: chown -R 1000:1000 sonarqube-scan-action
       - run: ./test/run-qa.sh
         timeout-minutes: 5
     services:
